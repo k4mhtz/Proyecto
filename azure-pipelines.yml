@@ -28,7 +28,7 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'AS'
+    azureSubscription: 'connection'
     appName: 'practica_group'
     package: '$(Build.ArtifactStagingDirectory)/build.zip'
   displayName: 'Deploy to Azure App Service'
