@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Everest | El Techo del Mundo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop id="myVideo">
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="logo">EVEREST</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#datos">Datos</a></li>
+            <li><a href="#historia">Historia</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio">
+        <div class="content">
+            <h1>MONTE EVEREST</h1>
+            <p>8,848 Metros sobre el nivel del cielo.</p>
+            <a href="#datos" class="btn">Explorar</a>
+        </div>
+    </header>
+
+    <section id="datos">
+        <div class="container">
+            <h2>Datos Impresionantes</h2>
+            <div class="cards-wrapper">
+                <div class="card glass">
+                    <h3>Ubicación</h3>
+                    <p>Frontera entre China (Tíbet) y Nepal. Es la montaña más alta de la superficie del planeta Tierra.</p>
+                </div>
+                <div class="card glass">
+                    <h3>El Nombre</h3>
+                    <p>En nepalí se llama Sagarmāthā ("La frente del cielo") y en tibetano Chomolungma ("Madre del universo").</p>
+                </div>
+                <div class="card glass">
+                    <h3>Clima Extremo</h3>
+                    <p>En la cima, la temperatura nunca supera el punto de congelación, llegando a -60°C en invierno.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Creado para aprender sobre la cima del mundo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
