@@ -1,7 +1,4 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+# Node.js pipeline – build + deploy a Azure App Service
 
 trigger:
 - main
@@ -18,4 +15,20 @@ steps:
 - script: |
     npm install
     npm run build
-  displayName: 'npm install and build'
+  displayName: 'Build project'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'
+    replaceExistingArchive: true
+  displayName: 'Zip build output'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'AS'
+    appName: 'practica_group'
+    package: '$(Build.ArtifactStagingDirectory)/build.zip'
+  displayName: 'Deploy to Azure App Service'
